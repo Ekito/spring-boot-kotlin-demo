@@ -1,4 +1,4 @@
-package hello
+package fr.ekito.agi.kotlin.domain
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
