@@ -19,13 +19,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders
  */
 class CustomerControllerTest {
 
-    lateinit var mockMvc: MockMvc;
+    lateinit var mockMvc: MockMvc
 
     @InjectMocks
-    lateinit var controller: CustomerController;
+    lateinit var controller: CustomerController
 
     @Mock
-    lateinit var repository: CustomerRepository;
+    lateinit var repository: CustomerRepository
 
     @Before
     fun setup() {

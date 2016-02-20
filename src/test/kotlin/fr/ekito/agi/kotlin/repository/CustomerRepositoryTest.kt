@@ -21,9 +21,9 @@ class CustomerRepositoryTest {
     val lastName = "Simpson"
 
     @Autowired
-    lateinit var repository: CustomerRepository;
+    lateinit var repository: CustomerRepository
     @Autowired
-    lateinit var bootstrap: BootStrap;
+    lateinit var bootstrap: BootStrap
 
     @Before
     fun setup() {
