@@ -18,23 +18,21 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 @SpringApplicationConfiguration(classes = arrayOf(Application::class))
 class CustomerRepositoryTest {
 
+    val lastName = "Simpson"
+
     @Autowired
     lateinit var repository: CustomerRepository;
     @Autowired
-    lateinit var bootstrap : BootStrap;
+    lateinit var bootstrap: BootStrap;
 
     @Before
-    open fun setup(){
+    fun setup() {
         repository.deleteAll()
         bootstrap.initData()
     }
 
     @Test
-    open fun testFindOne() {
-        // already bootstrapped
-        Assert.assertEquals(3, repository.count());
-
-        val lastName = "Simpson"
+    fun testFindOne() {
         val customer = Customer("Homer", lastName)
         repository.save(customer)
 
@@ -43,9 +41,7 @@ class CustomerRepositoryTest {
     }
 
     @Test
-    open fun testFindSeveral() {;
-
-        val lastName = "Simpson"
+    fun testFindSeveral() {
         repository.save(Customer("Homer", lastName))
         repository.save(Customer("Marge", lastName))
 

@@ -28,14 +28,14 @@ class CustomerControllerTest {
     lateinit var repository: CustomerRepository;
 
     @Before
-    open fun setup() {
+    fun setup() {
         MockitoAnnotations.initMocks(this)
 
         mockMvc = MockMvcBuilders.standaloneSetup(controller).setMessageConverters(MappingJackson2HttpMessageConverter()).build()
     }
 
     @Test
-    open fun test() {
+    fun test() {
         Mockito.`when`(repository.findAll()).thenReturn(listOf(Customer("John", "Doe")))
 
         mockMvc.perform(MockMvcRequestBuilders.get("/customer")).andExpect(MockMvcResultMatchers.status().isOk)
